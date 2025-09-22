@@ -27,7 +27,7 @@ defaults:
       layout: page
 
 # Build settings
-theme: minima
+theme: beautiful-jekyll-theme
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
