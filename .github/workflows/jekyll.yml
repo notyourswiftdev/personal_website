@@ -1,7 +1,7 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  workflow_dispatch:   # manual only
+  workflow_dispatch:  # manual only
 
 permissions:
   contents: read
@@ -15,21 +15,34 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
+      BUNDLE_FORCE_RUBY_PLATFORM: "true"  # helps with native gems on Linux
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          ruby-version: '3.2'        # match your Gemfile if you specify one
+          bundler-cache: true        # runs bundle install & caches gems
+
+      # Optional: sanity checks that often reveal the real error
+      - name: Bundler doctor
+        run: |
+          ruby -v
+          bundler -v
+          bundle platform
+          bundle env
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
