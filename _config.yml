@@ -1,13 +1,22 @@
 title: Aaron Cleveland
 email: clevelandm.aaron@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Software developer passionate about iOS, SwiftUI, and creating innovative
+  solutions. Sharing insights on mobile development and product strategy.
 baseurl: "" # keep empty when site is at domain root
 url: "https://aaroncleveland.com"
-twitter_username: notyourswiftdev
-github_username:  notyourswiftdev
+
+# Beautiful Jekyll theme settings
+author: Aaron Cleveland
+social-network-links:
+  twitter: notyourswiftdev
+  github: notyourswiftdev
+
+navbar-links:
+  Home: "/"
+  Work: "/work/"
+  Blog: "/blog/"
+  About: "/about/"
 
 # Defaults so you don’t repeat front matter
 defaults:
@@ -27,8 +36,10 @@ defaults:
       layout: page
 
 # Build settings
-theme: beautiful-jekyll-theme
+# remote_theme: daattali/beautiful-jekyll
+# theme: minima
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
@@ -40,16 +51,6 @@ paginate_path: "/blog/page:num/"
 # Permalinks
 permalink: /blog/:year/:month/:day/:title/
 
-# Navigation data
-nav:
-  - label: Home
-    url: /
-  - label: Work
-    url: /work/
-  - label: Blog
-    url: /blog/
-  - label: About
-    url: /about/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
