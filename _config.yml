@@ -17,7 +17,7 @@ navbar-links:
   Resume: "/resume/"
   Portfolio: "/work/"
   Blog: "/blog/"
-  About: "/about/"
+  Contact: "/contact/"
 
 # Defaults so you don’t repeat front matter
 defaults:
