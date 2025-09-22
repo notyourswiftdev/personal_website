@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article class="project">
+  <h1>{{ page.title }}</h1>
+  {% if page.tech %}<p><strong>Tech:</strong> {{ page.tech | join: ", " }}</p>{% endif %}
+  {% if page.role %}<p><strong>Role:</strong> {{ page.role }}</p>{% endif %}
+
+  {{ content }}
+
+  {% if page.links %}
+    <p class="links">
+      {% if page.links.site %}<a href="{{ page.links.site }}" target="_blank" rel="noopener">Website</a>{% endif %}
+      {% if page.links.appstore %} • <a href="{{ page.links.appstore }}" target="_blank" rel="noopener">App Store</a>{% endif %}
+    </p>
+  {% endif %}
+
+  {% if page.images %}
+    <div class="gallery">
+      {% for img in page.images %}
+        <img src="{{ img | relative_url }}" alt="{{ page.title }} screenshot">
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>

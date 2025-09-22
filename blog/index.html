@@ -1,0 +1,28 @@
+---
+title: Blog
+layout: page
+---
+
+<h1>Blog</h1>
+
+<ul class="post-list">
+  {% for post in paginator.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small>— {{ post.date | date: "%b %d, %Y" }}</small>
+      {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<nav class="pager">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
+  {% endif %}
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}
