@@ -1,5 +1,7 @@
 - label: Home
   url: /
+- label: Resume
+  url: /resume/
 - label: Work
   url: /work/
 - label: Blog

@@ -14,7 +14,8 @@ social-network-links:
 
 navbar-links:
   Home: "/"
-  Work: "/work/"
+  Resume: "/resume/"
+  Portfolio: "/work/"
   Blog: "/blog/"
   About: "/about/"
 
