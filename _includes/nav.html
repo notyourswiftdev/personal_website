@@ -1,0 +1,12 @@
+<nav class="site-nav">
+  <a class="brand" href="{{ '/' | relative_url }}">YourBrand</a>
+  <ul>
+    {% assign items = site.data.navigation | default: site.nav %}
+    {% for item in items %}
+      {% assign active = (page.url == item.url) or (page.url == item.url | append: 'index.html') %}
+      <li><a href="{{ item.url | relative_url }}" class="{% if active %}active{% endif %}">
+        {{ item.label }}
+      </a></li>
+    {% endfor %}
+  </ul>
+</nav>
