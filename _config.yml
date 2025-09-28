@@ -36,6 +36,11 @@ defaults:
     values:
       layout: page
 
+# Collections
+collections:
+  projects:
+    output: true
+
 # Build settings
 # remote_theme: daattali/beautiful-jekyll
 # theme: minima

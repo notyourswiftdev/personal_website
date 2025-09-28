@@ -91,3 +91,4 @@ I'd love to hear from you! Whether you have a project idea, want to collaborate,
 - **Email**: [clevelandm.aaron@gmail.com](mailto:clevelandm.aaron@gmail.com)
 - **Twitter**: [@notyourswiftdev](https://twitter.com/notyourswiftdev)
 - **GitHub**: [notyourswiftdev](https://github.com/notyourswiftdev)
+- **LinkedIn**: [amcleveland0](https://www.linkedin.com/in/amcleveland0)

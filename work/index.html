@@ -12,3 +12,21 @@ title: Portfolio
 </div>
 
 <p><em>Interested in working together? <a href="/about/">Get in touch!</a></em></p>
+
+<div class="projects">
+  {% for project in site.projects %}
+    <div class="project-card">
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      {% if project.tech %}
+        <p class="tech-stack"><strong>Tech Stack:</strong> {{ project.tech | join: ", " }}</p>
+      {% endif %}
+      {% if project.role %}
+        <p class="role"><strong>Role:</strong> {{ project.role }}</p>
+      {% endif %}
+      <p>{{ project.content | strip_html | truncatewords: 30 }}</p>
+      {% if project.images.first %}
+        <img src="{{ project.images.first | relative_url }}" alt="{{ project.title }}" class="project-thumbnail">
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
